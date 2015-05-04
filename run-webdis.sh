@@ -1,7 +1,4 @@
 #!/bin/bash
-
-cd /webdis && make clean all
-
 redis-server &
 
-exec ./webdis
+exec /usr/local/bin/webdis /tmp/webdis.json

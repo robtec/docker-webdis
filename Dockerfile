@@ -4,19 +4,25 @@ RUN apt-get update
 
 RUN apt-get install -y \
 	make \
-	git-core \
-	build-essential \
+	wget \
 	gcc \
-	libevent-dev
+	libevent-dev \
+	unzip
 
-RUN git clone https://github.com/nicolasff/webdis.git /webdis
+RUN wget -O webdis.zip https://github.com/nicolasff/webdis/archive/0.1.1.zip && unzip webdis.zip -d /
 
-ADD run-webdis.sh /
+ADD run-webdis.sh /tmp/
 
-ADD webdis.json /webdis/webdis.json
+ADD webdis.json /tmp/
 
-RUN chmod a+x /run-webdis.sh
+RUN cd /webdis-0.1.1/ && make && make install && cd ..
+
+RUN rm -rf /webdis-0.1.1/ webdis.zip
+
+RUN chmod a+x /tmp/run-webdis.sh
+
+RUN apt-get remove -y wget make gcc
 
 EXPOSE 7379
 
-CMD ["/run-webdis.sh"]
+CMD ["/tmp/run-webdis.sh"]
