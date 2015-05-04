@@ -17,12 +17,12 @@
 
 	"acl": [
 		{
-			"disabled":	["DEBUG", "SET"]
+			"disabled":	["DEBUG"]
 		},
+
 		{
 			"http_basic_auth":	"user:password",
-			"disabled": ["DEBUG", "FLUSHDB", "FLUSHALL"],
-    		"enabled":  ["SET"]
+			"enabled":		["DEBUG"]
 		}
 	],
 
