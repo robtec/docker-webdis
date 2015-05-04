@@ -1,5 +1,7 @@
 FROM redis
 
+MAINTAINER Rob Powell <rob.p.tec@gmail.com>
+
 RUN apt-get update
 
 RUN apt-get install -y \
