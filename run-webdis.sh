@@ -1,4 +1,4 @@
 #!/bin/bash
-redis-server &
+redis-server --appendonly yes &
 
 exec /usr/local/bin/webdis /tmp/webdis.json
