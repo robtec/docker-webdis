@@ -2,6 +2,8 @@
 
 Webdis HTTP client for Redis - Dockerized
 
+[![Build Status](https://travis-ci.org/robtec/docker-webdis.svg?branch=master)](https://travis-ci.org/robtec/docker-webdis)
+
 See http://webd.is/ for documentation on Webdis.
 
 To build the image
